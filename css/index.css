@@ -38,6 +38,14 @@ header .container:before{
 	margin: 0 auto;
 }
 
+.titulo{
+	width: 60%;
+	height: 100%;
+	margin: 0 auto;
+	font-size: 3em;
+	color: red;
+}
+
 section{
 	margin: 2em 0;
 	overflow: hidden;
