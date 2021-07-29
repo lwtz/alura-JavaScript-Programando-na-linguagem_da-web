@@ -11,11 +11,12 @@ for (; i < pacientes.length; i++) {
     let alturaValida = true
 
     if (!(peso <= 0 || peso >= 500)) {
-        console.log('Peso Válido')
+        // console.log('Peso Válido')
     } else {
-        console.log('Peso Inválido')
+        // console.log('Peso Inválido')
         pesoValido = false
         tdImc.textContent = "Peso Inválido"
+        paciente.classList.add('invalid-result')
     }
 
     !(altura <= 0 || altura > 5.00) ? console.log('Altura Válida') : alturaValida = false
