@@ -14,14 +14,19 @@ btnAdd.addEventListener('click', (event) => {
         return
     }
 
+    addPatientInTable(patient)
 
-    let tabela = document.querySelector('#tabela-pacientes')
-    tabela.appendChild(pacienteTR)
     form.reset()
     let msgErro = document.querySelector('#mensagens-erro')
     msgErro.innerHTML = ''
 })
 
+
+function addPatientInTable(paciente) {
+    let pacienteTR = buildTR(paciente)
+    let tabela = document.querySelector('#tabela-pacientes')
+    tabela.appendChild(pacienteTR)
+}
 
 function exibeMensagensDeErro(erros) {
     let ul = document.querySelector("#mensagens-erro")
