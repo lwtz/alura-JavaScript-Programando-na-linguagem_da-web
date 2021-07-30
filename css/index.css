@@ -144,3 +144,7 @@ button[disabled=disabled], button:disabled {
 .invalid-result {
 	background-color: lightcoral;
 }
+
+#mensagens-erro {
+	color: red;
+}

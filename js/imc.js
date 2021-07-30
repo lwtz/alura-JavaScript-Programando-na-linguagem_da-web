@@ -7,19 +7,22 @@ for (; i < pacientes.length; i++) {
 
     let tdImc = paciente.querySelector('.info-imc')
 
-    let pesoValido = true
-    let alturaValida = true
+    let pesoValido = validaPeso(peso)
+    let alturaValida = validaAltura(altura)
 
-    if (!(peso <= 0 || peso >= 500)) {
-        // console.log('Peso Válido')
-    } else {
-        // console.log('Peso Inválido')
+    if (!pesoValido) {
         pesoValido = false
         tdImc.textContent = "Peso Inválido"
         paciente.classList.add('invalid-result')
     }
 
-    !(altura <= 0 || altura > 5.00) ? console.log('Altura Válida') : alturaValida = false
+    if (!alturaValida) {
+        alturaValida = false
+        tdImc.textContent = "Altura Inválido"
+        paciente.classList.add('invalid-result')
+    }
+
+    // !(altura <= 0 || altura > 5.00) ? console.log('Altura Válida') : alturaValida = false
 
     if (pesoValido && alturaValida) {
         tdImc.textContent = calcIMC(peso, altura)
@@ -27,23 +30,19 @@ for (; i < pacientes.length; i++) {
 }
 
 
-// Events JS
-
-let title = document.querySelector('.titulo')
-title.textContent = 'William é o melhor'
-title.addEventListener('click', () => {
-    console.log('Anon function')
-})
-// title.addEventListener('click', function (){
-//     console.log('Isso é uma funcao anonima')
-// })
-
-// function msg() {
-//     console.log('Eae')
-// }
-
 function calcIMC(weight, height) {
     let imc = weight / (height * 2)
     return imc.toFixed(2)
 }
 
+function validaPeso(peso) {
+    if (peso >= 0 && peso <= 1000) {
+        return true
+    }
+}
+
+function validaAltura(altura) {
+    if (altura >= 0 && altura <= 3.00) {
+        return true
+    }
+}
